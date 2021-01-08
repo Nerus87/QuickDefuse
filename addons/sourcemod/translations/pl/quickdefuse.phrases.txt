@@ -1,0 +1,109 @@
+"Phrases"
+{
+	// In game chat
+	"sm_qd_panel_plant"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"			"Wybrałeś {{1}}{2}{default} kabel."
+	}
+
+	"sm_qd_panel_defuse"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"pl"			"{blue}{1}{default} wybrał {green}poprawny{default} {{2}}{3}{default} kabel (1:4 szansy)."
+	}
+
+	"sm_qd_panel_defuse_incorrected"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"pl"			"{blue}{1}{default} {red}zdetonował{default} C4 wybierając zły {{2}}{3}{default} kabel (3:4 szansy).\nPoprawny to: {{4}}{5}{default}."
+	}
+
+	"sm_qd_panel_defuse_nokit"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"pl"			"{blue}{1}{default} wybrał {green}poprawny{default} {{2}}{3}{default} kabel, bez zestawu (1:8 szansy)."
+	}
+
+	"sm_qd_panel_defuse_nokit_incorrected"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"pl"			"{blue}{1}{default} {red}zdetonował{default} C4, wybierając zły {{2}}{3}{default} kabel, bez zestawu (7:8 szansy).\nPoprawny to: {{4}}{5}{default}."
+	}
+
+	"sm_qd_panel_defuse_nokit_correct"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"pl"			"{blue}{1}{default} wybrał {green}poprawny{default} {{2}}{3}{default} kabel, bez zestawu ale i tak C4 {red}eksplodowało{default}!"
+	}
+
+	"sm_qd_plant_panel_title"
+	{
+		"pl"	"Wybierz kabel:"
+	}
+
+	"sm_qd_plant_panel_info"
+	{
+		"pl"	"CT może zgadnąć jaki kabel wybierzesz."
+	}
+
+	"sm_qd_plant_panel_ignore"
+	{
+		"pl"	"Wyjdź lub zignoruj ten panel."
+	}
+
+	"sm_qd_defuse_panel_title"
+	{
+		"pl"	"Ciągnij kabel:"
+	}
+
+	"sm_qd_defuse_panel_ignore"
+	{
+		"pl"	"Zignoruj ten panel aby normalnie rozbroić."
+	}
+
+	"sm_qd_defuse_panel_info"
+	{
+		"pl"	"Zrób to dobrze, a bomba zostanie rozbrojona."
+	}
+
+	"sm_qd_defuse_panel_info2"
+	{
+		"pl"	"Jeśli się pomylisz, bomba natychmiast eksploduje."
+	}
+
+	"sm_qd_defuse_panel_nokit_info"
+	{
+		"pl"	"Bez zestawu do rozbrajania masz 50% szansy na eksplozję,"
+	}
+
+	"sm_qd_defuse_panel_nokit_info2"
+	{
+		"pl"	"nawet jeśli wybierzesz odpowiedni kabel."
+	}
+
+	"sm_qd_panel_exit"
+	{
+		"pl"	"Wyjdź"
+	}
+
+	"sm_qd_wire_blue"
+	{
+		"pl"	"Niebieski"
+	}
+
+	"sm_qd_wire_yellow"
+	{
+		"pl"	"Żółty"
+	}
+
+	"sm_qd_wire_red"
+	{
+		"pl"	"Czerwony"
+	}
+
+	"sm_qd_wire_green"
+	{
+		"pl"	"Zielony"
+	}
+}

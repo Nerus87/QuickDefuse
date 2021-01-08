@@ -1,0 +1,109 @@
+"Phrases"
+{
+	// In game chat
+	"sm_qd_panel_plant"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"			"You chose the {{1}}{2}{default} wire."
+	}
+
+	"sm_qd_panel_defuse"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"en"			"{blue}{1}{default} {green}correctly{default} cut the {{2}}{3}{default} wire for an instant C4 defusal (1:4 odds)."
+	}
+
+	"sm_qd_panel_defuse_incorrected"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"en"			"{blue}{1}{default} {red}detonated{default} the C4 with an incorrect wire choice of {{2}}{3}{default} (3:4 odds).\nThe correct wire was {{4}}{5}{default}."
+	}
+
+	"sm_qd_panel_defuse_nokit"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"en"			"{blue}{1}{default} {green}correctly{default} pulled the {{2}}{3}{default} wire for an instant C4 defusal (1:8 odds)."
+	}
+
+	"sm_qd_panel_defuse_nokit_incorrected"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"en"			"{blue}{1}{default} {red}detonated{default} the C4 with an incorrect {{2}}{3}{default} wire (7:8 odds).\nThe correct wire was {{4}}{5}{default}."
+	}
+
+	"sm_qd_panel_defuse_nokit_correct"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"en"			"{blue}{1}{default} chose the correct {{2}}{3}{default} wire, but the C4 still {red}detonated!{default}"
+	}
+
+	"sm_qd_plant_panel_title"
+	{
+		"en"	"Choose a Wire:"
+	}
+
+	"sm_qd_plant_panel_info"
+	{
+		"en"	"The CT's can try guess this for an instant defuse."
+	}
+
+	"sm_qd_plant_panel_ignore"
+	{
+		"en"	"Exit, or ignore this for a random wire."
+	}
+
+	"sm_qd_defuse_panel_title"
+	{
+		"en"	"Choose a Wire:"
+	}
+
+	"sm_qd_defuse_panel_ignore"
+	{
+		"en"	"Ignore this to defuse normally"
+	}
+
+	"sm_qd_defuse_panel_info"
+	{
+		"en"	"Get it right and the bomb is defused"
+	}
+
+	"sm_qd_defuse_panel_info2"
+	{
+		"en"	"Get it wrong and the bomb instantly explodes"
+	}
+
+	"sm_qd_defuse_panel_nokit_info"
+	{
+		"en"	"With no defuse kit you have a 50% chance of the bomb exploding,"
+	}
+
+	"sm_qd_defuse_panel_nokit_info2"
+	{
+		"en"	"even if you choose the right wire."
+	}
+
+	"sm_qd_panel_exit"
+	{
+		"en"	"Exit"
+	}
+
+	"sm_qd_wire_blue"
+	{
+		"en"	"Blue"
+	}
+
+	"sm_qd_wire_yellow"
+	{
+		"en"	"Yellow"
+	}
+
+	"sm_qd_wire_red"
+	{
+		"en"	"Red"
+	}
+
+	"sm_qd_wire_green"
+	{
+		"en"	"Green"
+	}
+}
