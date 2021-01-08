@@ -9,7 +9,7 @@
  *
  *		Ignoring the menu's or selecting exit will let the game continue normally
  *		
- *		Refactored by Merus
+ *		Refactored by Nerus
  */
 
 #include <quickdefuse>
@@ -27,6 +27,7 @@ char wirecolours[4][16] = {"blue", "yellow", "red", "green"};
 ConVar sm_quickdefuse = null;
 ConVar sm_quickdefuse_debug = null;
 ConVar sm_quickdefuse_terrorist_select = null;
+ConVar sm_quickdefuse_select_notification = null;
 ConVar sm_quickdefuse_panel_draw_time = null;
 
 Handle forward_on_player_defuse = INVALID_HANDLE;
@@ -47,6 +48,8 @@ public void SetConVars()
 	sm_quickdefuse_debug = CreateConVar("sm_quickdefuse_debug", "0", "Debug plugin: '0' - disabled, '1' - enabled.");
 
 	sm_quickdefuse_terrorist_select = CreateConVar("sm_quickdefuse_terrorist_select", "1", "Enable or disable the ability to select wire by the terrorist: '0' - plugin random select, '1' - player select.");
+
+	sm_quickdefuse_select_notification = CreateConVar("sm_quickdefuse_select_notification", "1", "Enable or disable player notification of wire selection : '0' - disabled, '1' - enabled.");
 
 	sm_quickdefuse_panel_draw_time = CreateConVar("sm_quickdefuse_panel_draw_time", "5", "Draw panel to player in N seconds.");
 
@@ -91,13 +94,23 @@ public void OnBombPlant(Event event, const char[] name, bool dontBroadcast)
 
 	selectedWire = 0;
 
-	if(sm_quickdefuse_terrorist_select.BoolValue)
+	int client = GetClientFromEvent(event);
+
+	if(!IsValidPlayer(client, !ONLY_HUMMANS))
+		return;
+
+	if(sm_quickdefuse_terrorist_select.BoolValue && !IsBot(client))
 	{
-		CreatePlantPanel(GetClientFromEvent(event));
+		CreatePlantPanel(client);
 	}
 	else
 	{
 		selectedWire = GetRandomInt(1, 4);
+
+		if(sm_quickdefuse_select_notification.BoolValue && !IsBot(client))
+		{
+			NotifyPlayerSelection(client, selectedWire);
+		}
 	}
 }
 
@@ -107,7 +120,9 @@ public void OnBombPlanted(Event event, const char[] name, bool dontBroadcast)
 		return;
 
 	if (selectedWire == 0)
+	{
 		selectedWire = GetRandomInt(1, 4);	
+	}
 }
 
 public void OnBombDefuse(Event event, const char[] name, bool dontBroadcast)
@@ -125,10 +140,10 @@ public int PanelPlant(Menu menu, MenuAction action, int param1, int param2)
 
 	selectedWire = param2;
 
-	char color[16];
-	TranslateColor(wirecolours[param2-1], color);
-
-	CPrintToChat(param1, "%t", "sm_qd_panel_plant", wirecolours[param2-1], color);
+	if(sm_quickdefuse_select_notification.BoolValue && !IsBot(param1))
+	{
+		NotifyPlayerSelection(param1, param2);
+	}
 
 	return 0;
 }
@@ -350,6 +365,14 @@ public void ForwardPlayerDefuseC4(int client)
 	Call_PushCell(client);
 
 	Call_Finish();
+}
+
+public void NotifyPlayerSelection(int client, int wire)
+{
+	char color[16];
+	TranslateColor(wirecolours[wire-1], color);
+
+	CPrintToChat(client, "%t", "sm_qd_panel_plant", wirecolours[wire-1], color);
 }
 
 public void TranslateColor(const char[] color, char translation[16])

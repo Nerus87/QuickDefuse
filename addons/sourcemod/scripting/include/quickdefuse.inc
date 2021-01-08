@@ -39,6 +39,11 @@ stock bool IsValidPlayer(int client, bool only_human)
 	return (IsValidClient(client) && !IsClientSourceTV(client));
 }
 
+stock bool IsBot(int client)
+{
+	return (IsValidPlayer(client, !ONLY_HUMMANS) && IsFakeClient(client));
+}
+
 ///////////////
 /// Forwards
 
