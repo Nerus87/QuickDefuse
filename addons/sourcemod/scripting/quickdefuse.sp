@@ -8,10 +8,10 @@
  *		T's also get the option to select the correct selectedWire, otherwise it's random
  *
  *		Ignoring the menu's or selecting exit will let the game continue normally
- *
+ *		
+ *		Refactored by Merus
  */
 
-//#include <corecontrol>
 #include <quickdefuse>
 
 #pragma newdecls required
