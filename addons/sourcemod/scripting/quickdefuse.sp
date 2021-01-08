@@ -26,6 +26,7 @@ char wirecolours[4][16] = {"blue", "yellow", "red", "green"};
 
 ConVar sm_quickdefuse = null;
 ConVar sm_quickdefuse_debug = null;
+ConVar sm_quickdefuse_terrorist_select = null;
 ConVar sm_quickdefuse_panel_draw_time = null;
 
 Handle forward_on_player_defuse = INVALID_HANDLE;
@@ -44,6 +45,8 @@ public void SetConVars()
 	sm_quickdefuse = CreateConVar("sm_quickdefuse", "1", "Enable or disable plugin: '0' - disabled, '1' - enabled.");
 
 	sm_quickdefuse_debug = CreateConVar("sm_quickdefuse_debug", "0", "Debug plugin: '0' - disabled, '1' - enabled.");
+
+	sm_quickdefuse_terrorist_select = CreateConVar("sm_quickdefuse_terrorist_select", "1", "Enable or disable the ability to select wire by the terrorist: '0' - plugin random select, '1' - player select.");
 
 	sm_quickdefuse_panel_draw_time = CreateConVar("sm_quickdefuse_panel_draw_time", "5", "Draw panel to player in N seconds.");
 
@@ -88,7 +91,14 @@ public void OnBombPlant(Event event, const char[] name, bool dontBroadcast)
 
 	selectedWire = 0;
 
-	CreatePlantPanel(GetClientFromEvent(event));
+	if(sm_quickdefuse_terrorist_select.BoolValue)
+	{
+		CreatePlantPanel(GetClientFromEvent(event));
+	}
+	else
+	{
+		selectedWire = GetRandomInt(1, 4);
+	}
 }
 
 public void OnBombPlanted(Event event, const char[] name, bool dontBroadcast)
