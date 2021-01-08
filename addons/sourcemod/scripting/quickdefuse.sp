@@ -17,7 +17,7 @@
 #pragma newdecls required
 
 #define PLUGIN_NAME				"Quick Defuse"
-#define PLUGIN_VERSION			"v1.0"
+#define PLUGIN_VERSION			"v2.0"
 #define PLUGIN_DESCRIPTION		"Let's CT's choose a selectedWire for quick defusion."
 
 int selectedWire = 0;
