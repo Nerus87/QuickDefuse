@@ -103,15 +103,6 @@ public void OnBombPlant(Event event, const char[] name, bool dontBroadcast)
 	{
 		CreatePlantPanel(client);
 	}
-	else
-	{
-		selectedWire = GetRandomInt(1, 4);
-
-		if(sm_quickdefuse_select_notification.BoolValue && !IsBot(client))
-		{
-			NotifyPlayerSelection(client, selectedWire);
-		}
-	}
 }
 
 public void OnBombPlanted(Event event, const char[] name, bool dontBroadcast)
@@ -121,7 +112,14 @@ public void OnBombPlanted(Event event, const char[] name, bool dontBroadcast)
 
 	if (selectedWire == 0)
 	{
-		selectedWire = GetRandomInt(1, 4);	
+		selectedWire = GetRandomInt(1, 4);
+
+		int client = GetClientFromEvent(event);
+
+		if(sm_quickdefuse_select_notification.BoolValue && !IsBot(client))
+		{
+			NotifyPlayerSelection(client, selectedWire);
+		}
 	}
 }
 
