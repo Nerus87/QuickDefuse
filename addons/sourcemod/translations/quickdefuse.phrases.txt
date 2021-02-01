@@ -19,6 +19,12 @@
 		"en"			"{blue}{1}{default} {red}detonated{default} the C4 with an incorrect wire choice of {{2}}{3}{default} (3:4 odds).\nThe correct wire was {{4}}{5}{default}."
 	}
 
+	"sm_qd_panel_defuse_incorrected_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"en"			"{blue}{1}{default} {darkred}detonated{default} the C4 with an incorrect wire choice of {{2}}{3}{default} (3:4 odds).\nThe correct wire was {{4}}{5}{default}."
+	}
+
 	"sm_qd_panel_defuse_nokit"
 	{
 		"#format"		"{1:N},{2:s},{3:s}"
@@ -31,10 +37,22 @@
 		"en"			"{blue}{1}{default} {red}detonated{default} the C4 with an incorrect {{2}}{3}{default} wire (7:8 odds).\nThe correct wire was {{4}}{5}{default}."
 	}
 
+	"sm_qd_panel_defuse_nokit_incorrected_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"en"			"{blue}{1}{default} {darkred}detonated{default} the C4 with an incorrect {{2}}{3}{default} wire (7:8 odds).\nThe correct wire was {{4}}{5}{default}."
+	}
+
 	"sm_qd_panel_defuse_nokit_correct"
 	{
 		"#format"		"{1:N},{2:s},{3:s}"
 		"en"			"{blue}{1}{default} chose the correct {{2}}{3}{default} wire, but the C4 still {red}detonated!{default}"
+	}
+
+	"sm_qd_panel_defuse_nokit_correct_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"en"			"{blue}{1}{default} chose the correct {{2}}{3}{default} wire, but the C4 still {darkred}detonated!{default}"
 	}
 
 	"sm_qd_plant_panel_title"

@@ -8,6 +8,8 @@
 #include <sdktools>
 #include <multicolors>
 
+EngineVersion gameEngine = Engine_Unknown;
+
 stock bool IsValidHandler(Handle handle)
 {
 	return (handle != INVALID_HANDLE);
@@ -42,6 +44,11 @@ stock bool IsValidPlayer(int client, bool only_human)
 stock bool IsBot(int client)
 {
 	return (IsValidPlayer(client, !ONLY_HUMMANS) && IsFakeClient(client));
+}
+
+stock bool IsCSGO()
+{
+	return gameEngine == Engine_CSGO;
 }
 
 ///////////////

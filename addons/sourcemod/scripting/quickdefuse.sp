@@ -78,6 +78,8 @@ public void RegisterForwards()
 
 public void OnPluginStart()
 {
+	gameEngine = GetEngineVersion();
+
 	SetTranslation();
 
 	SetConVars();
@@ -177,7 +179,14 @@ public int PanelDefuseKit(Menu menu, MenuAction action, int param1, int param2)
 		char color2[16];
 		TranslateColor(wirecolours[selectedWire-1], color2);
 		
-		CPrintToChatAll("%t", "sm_qd_panel_defuse_incorrected", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);
+		if(IsCSGO())
+		{
+			CPrintToChatAll("%t", "sm_qd_panel_defuse_incorrected_csgo", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);
+		}
+		else
+		{
+			CPrintToChatAll("%t", "sm_qd_panel_defuse_incorrected", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);
+		}
 	}
 
 	return 0;
@@ -215,13 +224,28 @@ public int PanelDefuseNoKit(Menu menu, MenuAction action, int param1, int param2
 			char color2[16];
 			TranslateColor(wirecolours[selectedWire-1], color2);
 
-			CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_incorrected", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);
+			if(IsCSGO())
+			{
+				CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_incorrected_csgo", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);
+			}
+			else
+			{
+				CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_incorrected", param1, wirecolours[param2-1], color, wirecolours[selectedWire-1], color2);	
+			}
 		}
 		else
 		{
 			char color[16];
 			TranslateColor(wirecolours[param2-1], color);
-			CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_correct", param1, wirecolours[param2-1], color);
+
+			if(IsCSGO())
+			{
+				CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_correct_csgo", param1, wirecolours[param2-1], color);
+			}
+			else
+			{
+				CPrintToChatAll("%t", "sm_qd_panel_defuse_nokit_correct", param1, wirecolours[param2-1], color);
+			}
 		}
 	}
 

@@ -19,6 +19,12 @@
 		"pl"			"{blue}{1}{default} {red}zdetonował{default} C4 wybierając zły {{2}}{3}{default} kabel (3:4 szansy).\nPoprawny to: {{4}}{5}{default}."
 	}
 
+	"sm_qd_panel_defuse_incorrected_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"pl"			"{blue}{1}{default} {darkred}zdetonował{default} C4 wybierając zły {{2}}{3}{default} kabel (3:4 szansy).\nPoprawny to: {{4}}{5}{default}."
+	}
+
 	"sm_qd_panel_defuse_nokit"
 	{
 		"#format"		"{1:N},{2:s},{3:s}"
@@ -31,10 +37,22 @@
 		"pl"			"{blue}{1}{default} {red}zdetonował{default} C4, wybierając zły {{2}}{3}{default} kabel, bez zestawu (7:8 szansy).\nPoprawny to: {{4}}{5}{default}."
 	}
 
+	"sm_qd_panel_defuse_nokit_incorrected_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s},{4:s},{5:s}"
+		"pl"			"{blue}{1}{default} {darkred}zdetonował{default} C4, wybierając zły {{2}}{3}{default} kabel, bez zestawu (7:8 szansy).\nPoprawny to: {{4}}{5}{default}."
+	}
+
 	"sm_qd_panel_defuse_nokit_correct"
 	{
 		"#format"		"{1:N},{2:s},{3:s}"
 		"pl"			"{blue}{1}{default} wybrał {green}poprawny{default} {{2}}{3}{default} kabel, bez zestawu ale i tak C4 {red}eksplodowało{default}!"
+	}
+
+	"sm_qd_panel_defuse_nokit_correct_csgo"
+	{
+		"#format"		"{1:N},{2:s},{3:s}"
+		"pl"			"{blue}{1}{default} wybrał {green}poprawny{default} {{2}}{3}{default} kabel, bez zestawu ale i tak C4 {darkred}eksplodowało{default}!"
 	}
 
 	"sm_qd_plant_panel_title"
