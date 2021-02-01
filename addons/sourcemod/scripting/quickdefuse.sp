@@ -60,7 +60,7 @@ public void SetHooks()
 {
 	HookEvent("bomb_begindefuse", OnBombDefuse, EventHookMode_Post);
 	HookEvent("bomb_beginplant", OnBombPlant, EventHookMode_Post);
-	HookEvent("bomb_planted", OnBombPlanted, EventHookMode_PostNoCopy);
+	HookEvent("bomb_planted", OnBombPlanted, EventHookMode_Post);
 	
 	HookEvent("bomb_abortdefuse", OnBombActionInterupted, EventHookMode_Post);
 	HookEvent("bomb_abortplant", OnBombActionInterupted, EventHookMode_Post);
