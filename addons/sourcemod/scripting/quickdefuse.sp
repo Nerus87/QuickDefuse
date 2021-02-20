@@ -30,7 +30,7 @@ public Plugin myinfo = {
 
 public void OnPluginStart()
 {
-	gameEngine = GetEngineVersion();
+	Init();
 
 	SetTranslation();
 
@@ -39,6 +39,17 @@ public void OnPluginStart()
 	SetHooks();
 
 	RegisterForwards();
+}
+
+public void Init()
+{
+	gameEngine = GetEngineVersion();
+
+	if(IsCSGO())
+	{
+		wirecolours[0] = "darkblue";
+		wirecolours[2] = "darkred";
+	}
 }
 
 public void SetTranslation()

@@ -134,7 +134,7 @@ stock void NotifyPlayerSelection(int client, int wire)
 
 stock void TranslateColor(const char[] color, char translation[16])
 {
-	if(StrEqual(color, "blue", false))
+	if(StrEqual(color, "blue", false) || StrEqual(color, "darkblue", false))
 	{
 		Format(translation, sizeof(translation), "%t", "sm_qd_wire_blue");
 
@@ -148,7 +148,7 @@ stock void TranslateColor(const char[] color, char translation[16])
 		return;
 	}
 
-	if(StrEqual(color, "red", false))
+	if(StrEqual(color, "red", false)|| StrEqual(color, "darkred", false))
 	{
 		Format(translation, sizeof(translation), "%t", "sm_qd_wire_red");
 
